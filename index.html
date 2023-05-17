@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Leaflet Polygons</title>
+       <!-- <link type="text/css" rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+      <script src = "https://unpkg.com/leaflet/dist/leaflet.js"></script> -->
+      <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+      <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+      <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-geodesy/v0.1.0/leaflet-geodesy.js'></script>
+      <script src="
+      https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.10.2/src/leaflet.geometryutil.min.js
+      "></script>
+      
+      <style>
+         #map{
+            max-width: 100%;
+            ;
+            height: 700px;
+            /* width: 700px; */
+         }
+      </style>
+    </head>
+   
+   <body>
+ 
+      <h1> map view</h1>
+      <div id = "map" ></div>
+      <h1>Longitude and Latitude Form</h1>
+      <form id="locationForm">
+        <label for="place1">Place 1 : </label>
+        <input type="number" id="Place1latitude" name="Place1latitude" required placeholder="Place1latitude" step="any">
+        <input type="number" id="Place1longitude" name="Place1longitude" required placeholder="Place1longitude" step="any">
+
+    <br>
+        <label for="place2">Place 2 : </label>
+        <input type="number" id="Place2latitude" name="Place2latitude" required placeholder="Place2latitude" step="any">
+        <input type="number" id="Place2longitude" name="Place2longitude" required placeholder="Place2longitude" step="any">
+
+    
+        <button type="submit">Submit</button>
+      </form>
+      
+   </body>
+   <script>
+      var map = L.map('map').setView([51.505, -0.09], 13);
+
+    
+// add tile layer
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+  maxNativeZoom:19,
+        maxZoom:25
+}).addTo(map);
+ 
+   </script>
+ 
+
+   
+</html> 
+
